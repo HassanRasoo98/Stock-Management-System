@@ -31,7 +31,6 @@ namespace Stock_Management_System
         {
             if (textBox1.Text == "admin" && textBox2.Text == "1234")
             {
-                Console.WriteLine("Welcome to Taskmaster!!!");
                 label3.Text = "Login Successful / Welcome Taskmaster";
             }
         }
