@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Stock_Management_System
 {
+//    string connection_url = "Data Source=(localdb)\localDB1;Initial Catalog=STOCK_MANAGEMENT_SYSTEM;Integrated Security=True"; // desktop
     public partial class main_screen : Form
     {
         public main_screen()
