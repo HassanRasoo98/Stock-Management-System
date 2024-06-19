@@ -80,7 +80,7 @@ namespace Stock_Management_System
             dateTimePicker1.ResetText();
         }
 
-        private void customer_visibility_on()
+/*        private void customer_visibility_on()
         {
             label1.Visible = true;
             label2.Visible = true;
@@ -127,15 +127,19 @@ namespace Stock_Management_System
             dateTimePicker1.Visible = false;
             button5.Visible = false;
         }
-
+*/
         private void button2_Click(object sender, EventArgs e)
         {
-            customer_visibility_on();
+//            customer_visibility_on();
+            groupBox2.Visible = false;
+            groupBox1.Visible = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            customer_visibility_off();
+//            customer_visibility_off();
+            groupBox1.Visible = false;
+            groupBox2.Visible = true;
         }
 
         private bool validate_data()
@@ -208,6 +212,10 @@ namespace Stock_Management_System
             }
         }
 
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
+            groupBox2.Visible = false;
+        }
     }
 }

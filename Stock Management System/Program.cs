@@ -16,9 +16,9 @@ namespace Stock_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-//            Application.Run(new login_page());
+            Application.Run(new login_page());
 
-            Application.Run(new main_screen());
+/*ْْْْْْ            Application.Run(new main_screen());*/
         }
     }
 }
