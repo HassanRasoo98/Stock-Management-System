@@ -22,8 +22,16 @@ namespace Stock_Management_System
             main_Screen = temp;
 
             // to limit text box 5 (CNIC-1) to only accept 5 numbers at a time
+            textBox4.KeyPress += TxtNumeric_KeyPress;
+            textBox4.TextChanged += TxtNumeric_TextChanged;
             textBox5.KeyPress += TxtNumeric_KeyPress;
             textBox5.TextChanged += TxtNumeric_TextChanged;
+            textBox6.KeyPress += TxtNumeric_KeyPress;
+            textBox6.TextChanged += TxtNumeric_TextChanged;
+            textBox7.KeyPress += TxtNumeric_KeyPress;
+            textBox7.TextChanged += TxtNumeric_TextChanged;
+            textBox8.KeyPress += TxtNumeric_KeyPress;
+            textBox8.TextChanged += TxtNumeric_TextChanged;
         }
 
         private void TxtNumeric_KeyPress(object sender, KeyPressEventArgs e)
@@ -37,11 +45,22 @@ namespace Stock_Management_System
 
         private void TxtNumeric_TextChanged(object sender, EventArgs e)
         {
-            // Check if the length exceeds 5 characters
-            if (textBox5.Text.Length > 5)
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && textBox.Tag != null)
             {
-                textBox5.Text = textBox5.Text.Substring(0, 5); // Trim the text to 5 characters
-                textBox5.SelectionStart = textBox5.Text.Length; // Set the cursor to the end of the text
+                int maxLength;
+                if (int.TryParse(textBox.Tag.ToString(), out maxLength))
+                {
+                    if (textBox.Text.Length == maxLength)
+                    {
+                        SelectNextControl(textBox, true, true, true, true); // Move to the next control in the tab order
+                    }
+                    if (textBox.Text.Length > maxLength)
+                    {
+                        textBox.Text = textBox.Text.Substring(0, maxLength); // Trim the text to the max length
+                        textBox.SelectionStart = textBox.Text.Length; // Set the cursor to the end of the text
+                    }
+                }
             }
         }
 
@@ -69,12 +88,18 @@ namespace Stock_Management_System
             label4.Visible = true;
             label5.Visible = true;
             label6.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            label9.Visible = true;
 
             textBox1.Visible = true;
             textBox2.Visible = true;
             textBox3.Visible = true;
             textBox4.Visible = true;
             textBox5.Visible = true;
+            textBox6.Visible = true;
+            textBox7.Visible = true;
+            textBox8.Visible = true;
             dateTimePicker1.Visible = true;
             button5.Visible = true;
         }
@@ -87,12 +112,18 @@ namespace Stock_Management_System
             label4.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
 
             textBox1.Visible = false;
             textBox2.Visible = false;
             textBox3.Visible = false;
             textBox4.Visible = false;
             textBox5.Visible = false;
+            textBox6.Visible = false;
+            textBox7.Visible = false;
+            textBox8.Visible = false;
             dateTimePicker1.Visible = false;
             button5.Visible = false;
         }
@@ -177,9 +208,6 @@ namespace Stock_Management_System
             }
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
