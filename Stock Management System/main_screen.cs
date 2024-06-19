@@ -10,7 +10,8 @@ using System.Windows.Forms;
 
 namespace Stock_Management_System
 {
-//    string connection_url = "Data Source=(localdb)\localDB1;Initial Catalog=STOCK_MANAGEMENT_SYSTEM;Integrated Security=True"; // desktop
+    //    string connection_url = "Data Source=(localdb)\localDB1;Initial Catalog=STOCK_MANAGEMENT_SYSTEM;Integrated Security=True"; // desktop
+    //    string connection_url = "Data Source=(localDB)\\localDB1;Initial Catalog=Stock_Management_System;Integrated Security=True"; // laptop
     public partial class main_screen : Form
     {
         public main_screen()
@@ -37,5 +38,6 @@ namespace Stock_Management_System
             purchase_page purchase = new purchase_page(this);
             this.Hide(); purchase.Show();   
         }
+
     }
 }
