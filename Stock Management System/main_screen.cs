@@ -25,15 +25,17 @@ namespace Stock_Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sales_page sales = new sales_page();
+            sales_page sales = new sales_page(this);
             this.Hide();
 
             sales.Show();
 
-            if (sales.)
-            {
+        }
 
-            }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            purchase_page purchase = new purchase_page(this);
+            this.Hide(); purchase.Show();   
         }
     }
 }
